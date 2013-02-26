@@ -47,11 +47,39 @@ class Handler {
         return array_product($this);
     }
 
+    /**
+     * TODO: Should an exception be thrown on an empty array?
+     */
     public function min() {
         return min($this);
     }
 
+    /**
+     * TODO: Should an exception be thrown on an empty array?
+     */
     public function max() {
         return max($this);
+    }
+
+    /**
+     * TODO: Strict?
+     */
+    public function contains($value) {
+        return in_array($value, $this);
+    }
+
+    public function slice($offset, $length = null) {
+        return array_slice($this, $offset, $length);
+    }
+
+    /**
+     * TODO: Strict?
+     */
+    public function indexOf($value) {
+        return array_search($value, $this);
+    }
+
+    public function join($glue) {
+        return join($glue, $this);
     }
 }

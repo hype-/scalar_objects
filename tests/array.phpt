@@ -27,7 +27,17 @@ p('keys()',   $array->keys());
 
 p('reverse()', $array->reverse());
 
-p('merge()', $array->merge(['xoo']));
+p('merge(["xoo"])', $array->merge(["xoo"]));
+
+p('contains("foo")', $array->contains("foo"));
+p('contains("x")',   $array->contains("x"));
+
+p('slice(0, 2)', $array->slice(0, 2));
+p('slice(2)',    $array->slice(2));
+
+p('indexOf("quux")', $array->indexOf("quux"));
+
+p('join(" ")', $array->join(" "));
 
 echo "\nReduce with initial value\n";
 
@@ -98,7 +108,7 @@ reverse(): array(3) {
   [2]=>
   string(3) "foo"
 }
-merge(): array(4) {
+merge(["xoo"]): array(4) {
   [0]=>
   string(3) "foo"
   [1]=>
@@ -108,6 +118,20 @@ merge(): array(4) {
   [3]=>
   string(3) "xoo"
 }
+contains("foo"): bool(true)
+contains("x"): bool(false)
+slice(0, 2): array(2) {
+  [0]=>
+  string(3) "foo"
+  [1]=>
+  string(3) "bar"
+}
+slice(2): array(1) {
+  [0]=>
+  string(4) "quux"
+}
+indexOf("quux"): int(2)
+join(" "): string(12) "foo bar quux"
 
 Reduce with initial value
 reduce(): string(11) "zfoobarquux"
