@@ -39,8 +39,10 @@ p('indexOf("quux")', $array->indexOf("quux"));
 
 p('join(" ")', $array->join(" "));
 
-p('push("xoo")', $array->push("xoo"));
-p('pop()',       $array->pop());
+p('push("xoo")',    $array->push("xoo"));
+p('pop()',          $array->pop());
+p('unshift("boo")', $array->unshift("boo"));
+p('shift()',        $array->shift());
 
 echo "\nReduce with initial value\n";
 
@@ -146,6 +148,17 @@ push("xoo"): array(4) {
   string(3) "xoo"
 }
 pop(): string(3) "xoo"
+unshift("boo"): array(4) {
+  [0]=>
+  string(3) "boo"
+  [1]=>
+  string(3) "foo"
+  [2]=>
+  string(3) "bar"
+  [3]=>
+  string(4) "quux"
+}
+shift(): string(3) "boo"
 
 Reduce with initial value
 reduce(): string(11) "zfoobarquux"

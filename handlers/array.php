@@ -94,4 +94,14 @@ class Handler {
     public function pop() {
         return array_pop($this);
     }
+
+    public function unshift($value) {
+        array_unshift($this, $value);
+
+        return $this;
+    }
+
+    public function shift() {
+        return array_shift($this);
+    }
 }
