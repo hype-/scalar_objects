@@ -82,4 +82,16 @@ class Handler {
     public function join($glue) {
         return join($glue, $this);
     }
+
+    // Array mutating operations
+
+    public function push($value) {
+        array_push($this, $value);
+
+        return $this;
+    }
+
+    public function pop() {
+        return array_pop($this);
+    }
 }

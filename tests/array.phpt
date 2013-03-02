@@ -39,6 +39,9 @@ p('indexOf("quux")', $array->indexOf("quux"));
 
 p('join(" ")', $array->join(" "));
 
+p('push("xoo")', $array->push("xoo"));
+p('pop()',       $array->pop());
+
 echo "\nReduce with initial value\n";
 
 p('reduce()', $array->reduce(function($result, $value) { return $result . $value; }, 'z'));
@@ -132,6 +135,17 @@ slice(2): array(1) {
 }
 indexOf("quux"): int(2)
 join(" "): string(12) "foo bar quux"
+push("xoo"): array(4) {
+  [0]=>
+  string(3) "foo"
+  [1]=>
+  string(3) "bar"
+  [2]=>
+  string(4) "quux"
+  [3]=>
+  string(3) "xoo"
+}
+pop(): string(3) "xoo"
 
 Reduce with initial value
 reduce(): string(11) "zfoobarquux"
