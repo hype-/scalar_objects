@@ -44,6 +44,9 @@ p('pop()',          $array->pop());
 p('unshift("boo")', $array->unshift("boo"));
 p('shift()',        $array->shift());
 
+p('diff(["foo", "xoo"])',      $array->diff(["foo", "xoo"]));
+p('intersect(["bar", "xoo"])', $array->intersect(["bar", "xoo"]));
+
 echo "\nReduce with initial value\n";
 
 p('reduce()', $array->reduce(function($result, $value) { return $result . $value; }, 'z'));
@@ -159,6 +162,16 @@ unshift("boo"): array(4) {
   string(4) "quux"
 }
 shift(): string(3) "boo"
+diff(["foo", "xoo"]): array(2) {
+  [1]=>
+  string(3) "bar"
+  [2]=>
+  string(4) "quux"
+}
+intersect(["bar", "xoo"]): array(1) {
+  [1]=>
+  string(3) "bar"
+}
 
 Reduce with initial value
 reduce(): string(11) "zfoobarquux"

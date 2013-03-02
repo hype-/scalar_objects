@@ -83,6 +83,14 @@ class Handler {
         return join($glue, $this);
     }
 
+    public function diff(array $other) {
+        return array_diff($this, $other);
+    }
+
+    public function intersect(array $other) {
+        return array_intersect($this, $other);
+    }
+
     // Array mutating operations
 
     public function push($value) {
