@@ -91,6 +91,22 @@ class Handler {
         return array_intersect($this, $other);
     }
 
+    public function sort($flags = SORT_REGULAR) {
+        $copy = $this;
+
+        sort($copy, $flags);
+
+        return $copy;
+    }
+
+    public function sortBy(callable $comparator) {
+        $copy = $this;
+
+        usort($copy, $comparator);
+
+        return $copy;
+    }
+
     // Array mutating operations
 
     public function push($value) {
